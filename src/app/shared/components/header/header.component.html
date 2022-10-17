@@ -1,0 +1,13 @@
+<div class="header">   
+    <div class="header-navigation">
+        <div class="header-navigation-items">
+            <p class="header-navigation-item" [ngClass]="{'highlight': newsPageActivated}" [routerLink]="['/']">NEWS</p>
+            <p class="header-navigation-item" [ngClass]="{'highlight': myBlogPageActivated}" [routerLink]="['/myBlog']">MY BLOG</p>
+            <p class="header-navigation-item">ABOUT</p>
+            <p *ngIf="isAdmin"class="header-navigation-item" [ngClass]="{'highlight': adminPageActivated}" [routerLink]="['/admin']">ADMIN</p>
+            <p class="header-navigation-item">CONTACT</p>
+        </div>
+    </div>
+</div> 
+
+

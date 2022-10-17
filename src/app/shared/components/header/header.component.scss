@@ -1,0 +1,32 @@
+.header{
+    display: flex;
+    justify-content: center;
+}
+
+.header-navigation{
+    width: 20vw;
+}
+
+.header-navigation-items{
+    width: 100%;
+    margin-top: 5vh;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-navigation-item{
+    font-family: futura-lt-w01-book, sans-serif;
+    font-weight: 400;
+    font-size: 1.5vh;
+    color: #CCCCD6;
+    cursor: pointer;
+}
+
+.header-navigation-item:hover {
+    color: #605E5E;
+}
+
+.highlight{
+    color: black;
+}
+

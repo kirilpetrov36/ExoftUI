@@ -1,0 +1,46 @@
+<div class="header-blog-name">EXOFT BLOG</div>
+<button class="create-article-button" routerLink="ArticleEditor">Create article</button>
+<div class="posts-container">
+    <div class="post" *ngFor="let article of articles">
+
+        <ng-template [ngIf]="article.articleFiles.length > 0" [ngIfElse]="noArticleImage">
+            <img class="post-image" src={{article.articleFiles[0].url}} routerLink="/Article/{{article.id}}">
+        </ng-template>      
+        <ng-template #noArticleImage>
+            <img class="post-image" src="../../../../assets/images/icons/no-article-image.png" routerLink="/Article/{{article.id}}">
+        </ng-template>
+        
+        <div class="text-wrapper">
+            <div class="avatar-username">
+
+                <ng-template [ngIf]="article.user.files.length > 0" [ngIfElse]="noUserImage">
+                    <img class="avatar" src="{{article.user.files[0].url}}" >
+                </ng-template>      
+                <ng-template #noUserImage>
+                    <img class="avatar" src="../../../../assets/images/icons/user.png">
+                </ng-template>
+
+                <div>{{article.user.firstName}} {{article.user.lastName}}</div>
+
+            </div>
+            <div class="post-title" routerLink="article/{{article.id}}">{{article.title}}</div>
+            <div class="post-text" routerLink="article/{{article.id}}">{{article.content | contentPreview}}</div>
+            
+        </div>
+        <div class="likes-comments">
+            <div class="likes">
+                <img src="../../../../../assets/images/icons/like.png" class="like-icon">
+                {{article.likesAmount}}
+            </div>
+            <div>
+                <img src="../../../../../assets/images/icons/comment.png" class="like-icon">
+                {{article.commentsAmount}}
+            </div>           
+        </div>
+    </div>
+</div>
+
+<div class="noArticlesContainer" *ngIf="noArticles">
+    <img src="../../../../../assets/images/icons/no-results.png" class="noArticlesIcon">
+    <div class="noArticles" routerLink="ArticleEditor">You got no articles, click here to create</div>
+</div> 

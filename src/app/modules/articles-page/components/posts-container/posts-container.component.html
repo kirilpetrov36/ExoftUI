@@ -1,0 +1,58 @@
+<div class="header-blog-name">EXOFT BLOG</div>
+<div class="content">
+    <div class="navigation">
+        <div class="navigation-tags">
+            <p class="tag">ALL POSTS</p>
+            <p class="tag">STYLE</p>
+            <p class="tag">BEATY</p>
+            <p class="tag">RECIPES</p>
+            <p class="tag">BABY</p>
+            <p class="tag">MOTHERHOOD</p>
+            <p class="tag">HOME DECOR</p>
+        </div>
+        <div class="search-button-wrapper">
+            <div class="search-bar">
+                <mat-form-field class="">
+                        <input type="tel" matInput placeholder="Search" name="search" [formControl]="search">
+                </mat-form-field>
+            </div>
+            <!--<button class="login-button" [routerLink]="['/auth/sign-up']">Log in / Sign up</button>-->
+            <app-auth-button></app-auth-button>
+        </div>
+    </div>
+</div>
+<div class="posts-container">
+    <div class="post" *ngFor="let article of articlesToShow">
+        <ng-template [ngIf]="article.articleFiles.length > 0" [ngIfElse]="noArticleImage">
+            <img class="post-image" src={{article.articleFiles[0].url}} routerLink="article/{{article.id}}">
+        </ng-template>      
+        <ng-template #noArticleImage>
+            <img class="post-image" src="../../../../assets/images/icons/no-article-image.png" routerLink="article/{{article.id}}">
+        </ng-template>
+        
+        <div class="text-wrapper">
+            <div class="avatar-username">
+                <ng-template [ngIf]="article.user.files.length > 0" [ngIfElse]="noUserImage">
+                    <img class="avatar" src="{{article.user.files[0].url}}" >
+                </ng-template>      
+                <ng-template #noUserImage>
+                    <img class="avatar" src="../../../../assets/images/icons/user.png">
+                </ng-template>
+                <div>{{article.user.firstName}} {{article.user.lastName}}</div>
+            </div>
+            <div class="post-title" routerLink="article/{{article.id}}">{{article.title}}</div>
+            <div class="post-text" routerLink="article/{{article.id}}">{{article.content | contentPreview}}</div>
+            
+        </div>
+        <div class="likes-comments">
+            <div class="likes">
+                <img src="../../../../../assets/images/icons/like.png" class="like-icon">
+                {{article.likesAmount}}
+            </div>
+            <div>
+                <img src="../../../../../assets/images/icons/comment.png" class="like-icon">
+                {{article.commentsAmount}}
+            </div>           
+        </div>
+    </div>
+</div>

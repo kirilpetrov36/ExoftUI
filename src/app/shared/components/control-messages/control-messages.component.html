@@ -1,0 +1,7 @@
+<div class="form-control-feedback" *ngIf="control.errors && (control.dirty || control.touched)">
+  <p *ngIf="control.errors['required']" class="validation-error">This field is required</p>
+  <p *ngIf="control.errors['maxlength']" class="validation-error">Max length 30 symbols</p>
+  <p *ngIf="control.errors['minlength']" class="validation-error">Min length 8 symbols</p>
+  <p *ngIf="control.errors['passwordStrength']" class="validation-error">Your password must have lower case, upper case and numeric characters</p>
+  <p *ngIf="control.errors['pattern']" class="validation-error">Email must contain at least the @ character</p>
+</div>

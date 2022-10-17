@@ -1,0 +1,32 @@
+<div class="text-wrapper">
+    <div class="avatar-username">
+        <ng-template [ngIf]="article.user.files.length > 0" [ngIfElse]="noUserImage">
+            <img class="avatar" src="{{article.user.files[0].url}}" >
+        </ng-template>      
+        <ng-template #noUserImage>
+            <img class="avatar" src="../../../../assets/images/icons/user.png">
+        </ng-template>
+        <div>{{article.user.firstName}} {{article.user.lastName}}</div>
+        
+        <ng-template [ngIf]="article.isVerified" [ngIfElse]="notVerifiedArticle">
+            <button class="btn verified" (click)="unVerify()">Unverify</button>
+        </ng-template>
+        <ng-template #notVerifiedArticle>
+            <button class="btn notVerified" (click)="verify()">Not verified</button>
+        </ng-template>
+    </div>
+    <div class="post-title" routerLink="article/{{article.id}}">{{article.title}}</div>
+    <div class="post-text" routerLink="article/{{article.id}}">{{article.content | contentPreview}}</div>
+    
+</div>
+<!-- <div class="likes-comments">
+    <div class="likes">
+        <img src="../../../../../assets/images/icons/like.png" class="like-icon">
+        {{article.likesAmount}}
+    </div>
+    <div>
+        <img src="../../../../../assets/images/icons/comment.png" class="like-icon">
+        {{article.commentsAmount}}
+    </div>           
+</div> -->
+

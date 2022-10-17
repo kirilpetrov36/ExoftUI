@@ -1,0 +1,39 @@
+<div class="navigation">
+    <div class="search-button-wrapper">
+        <div class="search-bar">
+            <!--<mat-form-field>
+                <input type="tel" matInput placeholder="Search" name="search" formControlName="search">
+                <button matSuffix mat-button>
+                    <mat-icon>search</mat-icon>
+                </button>
+            </mat-form-field>-->
+        </div>
+        <app-auth-button></app-auth-button>
+    </div>
+    <div class="content">
+        <div class="d-flex flex-row">
+            <div class="post-title">{{article.title}}</div>
+            <button class="menu-button" mat-icon-button *ngIf="canEdit$ | async" [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+                <button (click)="editArticle()" mat-menu-item>
+                    <mat-icon>edit</mat-icon>
+                    <span>Edit</span>
+                </button>
+                <button (click)="deleteArticle()" mat-menu-item>
+                    <mat-icon>delete</mat-icon>
+                    <span>Delete</span>
+                </button>
+            </mat-menu>    
+        </div>
+        <div class="post-date">{{article.createdAt | date:'mediumDate'}}</div>
+        <div class="post-text">{{article.content}}</div>
+        <div class="images-container">
+            <div *ngFor="let image of article.articleFiles">
+                <img class="post-image" src="{{image.url}}"/>
+            </div>
+        </div>
+    </div>
+    <!--<comments currentUserId="1"></comments>-->
+</div>

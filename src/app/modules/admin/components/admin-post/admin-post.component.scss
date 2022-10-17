@@ -1,0 +1,86 @@
+
+
+.post-image{
+    height: 81vh;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.text-wrapper{
+    width: 27vw;
+    height: 25vh;    
+    padding: 4vh 2vw;
+    margin-bottom: 7vh;
+}
+
+.post-title{
+    font-family: futura-lt-w01-book, sans-serif;
+    color: #2f2e2e;
+    font-size: 3.2vh;
+    margin-bottom: 2vh;
+    cursor: pointer;  
+}
+
+.post-text{
+    font-family: futura-lt-w01-book, sans-serif;
+    color: #a0a09f;
+    font-size: 2vh;
+    line-height: 3vh;
+    cursor: pointer;
+}
+
+.header-blog-name{
+    height: 12vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(224,192,169);
+    font-family: futura-lt-w01-book, sans-serif;
+    font-size: 22px;
+    font-weight: 400;  
+    letter-spacing: 0.7vw;
+    color: #2f2e2e; 
+}
+
+.avatar{
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    margin-right: 1vw;
+}
+
+.avatar-username{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 2vh;
+}
+
+.likes-comments{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-bottom: 3vh;
+    margin-right: 2vw;
+    align-self: flex-end;
+}
+
+.like-icon{
+    width: 20px;
+    height: 20px;
+}
+
+.likes{
+    margin-right: 0.5vw;
+}
+
+.notVerified{
+    color: red;
+}
+
+.verified{
+    color: green;
+}

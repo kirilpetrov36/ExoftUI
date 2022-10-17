@@ -1,0 +1,24 @@
+.article-editor-container{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20vw;
+    margin-right: 20vw;
+    align-items: center;
+    margin-top: 6vh;
+}
+
+.page-title{
+    color: black;
+    font-family: futura-lt-w01-book, sans-serif;
+    font-size: 40px;
+}
+
+.forms-container{
+    display: flex;
+    flex-direction: column;
+    margin-top: 6vh;
+}
+
+.file-input {
+    display: none;
+  }

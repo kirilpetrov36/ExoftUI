@@ -1,0 +1,28 @@
+<div class="d-flex mt-5 justify-content-center">
+    <div class="col-sm-4">
+        <h1 class="text-center">Sign In</h1>
+        <div class="text-center">
+            <a>No account? </a>
+            <a [routerLink]="['/auth/sign-up']" class="no-inderline">Sign Up</a>
+        </div>
+        <form [formGroup]="signInForm" (ngSubmit)="submit()" class="mt-4">
+            <fieldset class="d-flex flex-column">
+
+                <fieldset class="form-group mb-2">
+                    <input type="text" class="form-control form-control-lg" placeholder="Email" formControlName="email"/>
+                </fieldset>
+
+                <fieldset class="form-group mb-2">
+                    <input type="password" class="form-control form-control-lg" placeholder="Password" formControlName="password"/>
+                </fieldset>
+
+                <div *ngFor="let error of responseErrors">
+                    <div class="signIn-error">{{error}}</div>
+                </div>
+                <div class="signIn-error">{{responseError}}</div>
+
+                <button class="btn btn-primary align-self-end button-color" type="submit" [disabled]="!signInForm.valid">Sign In</button>   
+            </fieldset>
+        </form>
+    </div>
+</div>

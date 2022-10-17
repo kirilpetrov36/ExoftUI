@@ -1,0 +1,7 @@
+<ng-template [ngIf]="isImage" [ngIfElse]="noImage">
+    <img src="files[0].url">
+</ng-template>
+
+<ng-template #noImage>
+    <img src="../../../../assets/images/icons/user.png">
+</ng-template>

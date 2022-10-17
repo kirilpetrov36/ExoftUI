@@ -1,0 +1,11 @@
+<button class="login-button"  *ngIf="!(authService.isAuthenticatedObs$ | async)" [routerLink]="['/auth/sign-up']">Log in / Sign up</button>
+<div class="d-flex flex-row align-items-center" *ngIf="authService.isAuthenticatedObs$ | async" [matMenuTriggerFor]="menu">
+    <div class="username">{{userFirstName}} {{userLastName}}</div>
+    <img src="{{avatarUrl}}"  class="user-avatar">
+</div>
+<mat-menu #menu="matMenu">
+    <button (click)="logout()"mat-menu-item>      
+        Logout
+    </button>
+</mat-menu> 
+
